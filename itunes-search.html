@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>iTunes - Search</title>
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 
+
+        <style type="text/css">
+        .songs-search-result {
+            border: 1px solid Gray;
+            margin-bottom: 5px;
+            padding: 5px;
+        }
+
+        .songs-search-result  .label{
+            display: inline-block;
+            width: 200px;
+        }
+        </style>
+
+       
+            
+        
+    </head>
+
+    <body>
+        Please enter a search term below (e.g. Michael):<br />
+        <input type="text" id="search-keyword" title="Enter Search Keyword" />
+        <br />
+        <input type="button" value="Perform iTunes Search" onclick="performSearch();" />
+
+        <div id="itunes-results">
+        </div>
+
+        <script src="itunes-search.js"></script>
+        
+    </body>
+</html>
+
+
