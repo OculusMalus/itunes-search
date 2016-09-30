@@ -60,20 +60,19 @@ $.each(results, function(i, value){
     html += '<td><span class="label">Artist: </span><a href="{0}" target="_blank">{1}</a></td>'.replace("{0}", object.artist_url).replace("{1}", object.artist_name);
     html += '<td><a href="{0}" target="_blank">Buy Song</a></td>'.replace("{0}", object.track_url);
 
-    if (object.trackPrice < 0){ html += '<td align="right">N/A</td>';}
-    else {html += '<td><span class="label">Track Price: </span>${0} </td>'.replace("{0}", object.trackPrice)}    
+        if (object.trackPrice < 0){ html += '<td align="right">N/A</td>';}
+        else {html += '<td><span class="label">Track Price: </span>${0} </td>'.replace("{0}", object.trackPrice)}    
 
     html +='</tr><tr><td><a href="{0}" target="_blank">Preview</a></td>'.replace("{0}", object.previewUrl);
- 
-    
-                            
-    
-    
     html += '<td><span class="label">Collection:</span><a href="{0}" target="_blank">{1}</a></td>'.replace("{0}", object.collection_url).replace("{1}", object.collection_name);
-    html += '<td><span class="label">Collection Price: </span>${0}</td>'.replace("{0}", item.collectionPrice);
-    html += '<td><span class="label">Primary Genre:</span>{0}</td></tr>'.replace("{0}", object.genre);
+
+        if (item.collectionPrice < 0){ html += '<td align="right">N/A</td>';}
+        else {html += '<td><span class="label">Collection Price: </span>${0}</td>'.replace("{0}", item.collectionPrice);}    
+    
+    html += '<td><span class="label">Primary Genre:</span>{0}</td></tr><br>'.replace("{0}", object.genre);
       
 
+    
     /*LOAD CAROUSEL WITH THIS OBJECT or CALL SOME FUNCTION TO DO IT*/
     
     /*WAIT?? FOR SLIDE EVENT
