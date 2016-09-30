@@ -2,9 +2,7 @@
     <head>
         <title>iTunes - Search</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link href="mricode.pagination.css" rel="stylesheet">
-        <script src="mricode.pagination.js"></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 
+        <link rel="stylesheet" href="pagination.css">
         <style type="text/css">
 
         .label {
@@ -85,12 +83,14 @@
                             <th>Price</th>
                         </tr>
                     </thead> -->
-                    <tbody id="itunes-results">
+                    <!-- <tbody id="itunes-results"> -->
+                    <tbody id="data-container">
                     
                     </tbody>
                           
                 </table>
-                <div align="center" id="pagination-demo" class="m-pagination"></div>
+                
+                    <div id="pagination-container"></div>
 
             </div>
     </div>
@@ -104,9 +104,10 @@
   
 
   
-
-  <script src="itunes-search.js"></script>
-        <!-- <script src="paging.js"></script> -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+    <script src="pagination.js"></script>
+    <script src="itunes-search.js"></script>
+    
 </body>
 
 
