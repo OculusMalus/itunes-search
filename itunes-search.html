@@ -6,6 +6,16 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 
 
         <style type="text/css">
+
+        .label {
+            color: Gray;
+        }
+        .search-photo {
+            border: 1px solid Gray;
+            margin-bottom: 5px;
+            padding:5px;
+        }
+
         .songs-search-result {
             border: 1px solid Gray;
             margin-bottom: 5px;
@@ -42,41 +52,66 @@
     </head>
 
 <body>
-  
-  <!-- <div class="row"> -->
+
+    <div class="row">
 
 
-    <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
 
-    <div id="searchBox" class="col-sm-2">
-        Please enter a search term below (e.g. Michael):<br />
-        <input type="text" id="search-keyword" title="Enter Search Keyword" />
-        <br />
-        <input id="input" type="button" value="Perform iTunes Search" />
-   <!--  </div> -->
-  <br>
-  </div>
+        <div id="searchBox" class="col-sm-2">
+            Please enter search terms below (e.g. Over the Rainbow or Judy Garland):<br />
+            <input type="text" id="search-keyword" title="Enter Search Keyword" />
+            <br />
+            <input id="input" type="button" value="Search iTunes" />
+        </div>
 
-  
-
-  <!-- <div class="row"> -->
-
-    <div class="col-sm-1"></div>
-
-
-    <div id="itunes-photo" class="col-sm-2">
-
-
+        <div class="col-sm-9"></div>
+            
     </div>
 
-    <div id="itunes-results" class="col-sm-6">
-        
+
+
+
+    <div class="container">
+        <!-- <h2>Results</h2> -->
+            <div style="overflow-x:auto;">
+                <table class="table">
+                    <!-- <thead>
+                        <tr>
+                            <th>Photo</th>
+                            <th>Song</th>
+                            <th>Artist</th>
+                            <th></th>
+                            <th>Price</th>
+                        </tr>
+                    </thead> -->
+                    <tbody id="itunes-results">
+                    
+                    </tbody>
+
+
+
+                        <!-- <tr>
+                            <td rowspan="2"><img src="9to5.jpg"></td>
+                            <td>Song Title</td>
+                            <td><a href="#">Preview Song</a></td>
+                            <td><a href="#">Buy Song Here</a></td>
+                            <td>$0.99</td>
+                        <tr> -->
+                            
+                </table>
+            </div>
     </div>
 
-    <div class="col-sm-3"></div>
 
-  <!-- </div> -->
 
+
+
+
+
+  
+
+  
 
   <script src="itunes-search.js"></script>
         <!-- <script src="paging.js"></script> -->

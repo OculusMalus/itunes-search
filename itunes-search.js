@@ -32,7 +32,7 @@ function performSearch(){
 
 function handleTunesSearchResults(data) {
     var results = data.results;
-    var html = '';
+    var html = '<h2>Results</h2>';
 
 
 
@@ -54,34 +54,34 @@ $.each(results, function(i, value){
                     };
 
 
-    html += '<div class="search-photos">';
-    html += '<img src="{0}" target="_blank" style="float:left;">'.replace("{0}", object.artworkUrl100);
-    html += '</div>';
+    html +='<tr>'
+    html += '<td rowspan="2"><img class="img-responsive" src="{0}"></td>'.replace("{0}", object.artworkUrl100);
+    html += '<td>{0}</td>'.replace("{0}", object.track_name);                     
+    html += '<td><span class="label">Artist: </span><a href="{0}" target="_blank">{1}</a></td>'.replace("{0}", object.artist_url).replace("{1}", object.artist_name);
+    html += '<td><a href="{0}" target="_blank">Buy Song</a></td>'.replace("{0}", object.track_url);
 
-    jQuery('#itunes-photo').html(html);
+    if (object.trackPrice < 0){ html += '<td align="right">N/A</td>';}
+    else {html += '<td><span class="label">Track Price: </span>${0} </td>'.replace("{0}", object.trackPrice)}    
 
-    html = '';
-
-    html += '<div class="songs-search-result">';
-    html += '<span class="label">Track:</span>{0}&nbsp;&nbsp;'.replace("{0}", object.track_name);
-    html += '<a href="{0}" target="_blank">Preview</a>&nbsp;&nbsp;'.replace("{0}", object.previewUrl);
-    html += '<a href="{0}" target="_blank">Full Song</a>&nbsp;&nbsp;'.replace("{0}", object.track_url);
+    html +='</tr><tr><td><a href="{0}" target="_blank">Preview</a></td>'.replace("{0}", object.previewUrl);
+ 
     
-    if (object.trackPrice < 0){ html += '<span class="label">Track Price:</span>unavailavle<br />';}
-    else {html += '<span class="label">Track Price:</span>{0} {1}<br />'.replace("{0}", object.trackPrice).replace("{1}", item.currency);}                            
+                            
     
-    html += '<span class="label">Artist:</span><a href="{0}" target="_blank">{1}</a><br />'.replace("{0}", object.artist_url).replace("{1}", object.artist_name);
-    html += '<span class="label">Collection:</span><a href="{0}" target="_blank">{1}</a><br />'.replace("{0}", object.collection_url).replace("{1}", object.collection_name);
-    html += '<span class="label">Collection Price:</span>{0} {1}<br />'.replace("{0}", item.collectionPrice).replace("{1}", item.currency);
-    html += '<span class="label">Primary Genre:</span>{0}<br />'.replace("{0}", object.genre);
-    html += '</div>';
     
+    html += '<td><span class="label">Collection:</span><a href="{0}" target="_blank">{1}</a></td>'.replace("{0}", object.collection_url).replace("{1}", object.collection_name);
+    html += '<td><span class="label">Collection Price: </span>${0}</td>'.replace("{0}", item.collectionPrice);
+    html += '<td><span class="label">Primary Genre:</span>{0}</td></tr>'.replace("{0}", object.genre);
+      
 
     /*LOAD CAROUSEL WITH THIS OBJECT or CALL SOME FUNCTION TO DO IT*/
-    jQuery('#itunes-results').html(html)
+    
     /*WAIT?? FOR SLIDE EVENT
     BACK TO BEGINNING OF LOOP*/
 
-
     })
+
+
+jQuery('#itunes-results').html(html)
+
 }
