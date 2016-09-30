@@ -1,7 +1,8 @@
 <html>
     <head>
         <title>iTunes - Search</title>
-        <link rel="stylesheet" href="/resources/demos/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 
 
         <style type="text/css">
@@ -15,25 +16,73 @@
             display: inline-block;
             width: 200px;
         }
-        </style>
 
+        .paging-nav {
+            text-align: right;
+            padding-top: 2px;
+
+        }       
+
+        .paging-nav a {
+            margin: auto 1px;
+            text-decoration: none;
+            display: inline-block;
+            padding: 1px 7px;
+            background: #91b9e6;
+            color: white;
+            border-radius: 3px;
+        }
+
+        .paging-nav .selected-page {
+            background: #187ed5;
+            font-weight: bold;
+        }
+        </style>
        
-            
-        
     </head>
 
-    <body>
+<body>
+  
+  <!-- <div class="row"> -->
+
+
+    <div class="col-sm-1"></div>
+
+    <div id="searchBox" class="col-sm-2">
         Please enter a search term below (e.g. Michael):<br />
         <input type="text" id="search-keyword" title="Enter Search Keyword" />
         <br />
-        <input type="button" value="Perform iTunes Search" onclick="performSearch();" />
+        <input id="input" type="button" value="Perform iTunes Search" />
+   <!--  </div> -->
+  <br>
+  </div>
 
-        <div id="itunes-results">
-        </div>
+  
 
-        <script src="itunes-search.js"></script>
+  <!-- <div class="row"> -->
+
+    <div class="col-sm-1"></div>
+
+
+    <div id="itunes-photo" class="col-sm-2">
+
+
+    </div>
+
+    <div id="itunes-results" class="col-sm-6">
         
-    </body>
+    </div>
+
+    <div class="col-sm-3"></div>
+
+  <!-- </div> -->
+
+
+  <script src="itunes-search.js"></script>
+        <!-- <script src="paging.js"></script> -->
+</body>
+
+
 </html>
 
 
