@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="pagination.css">
         <style type="text/css">
 
+       
         .label {
             color: Gray;
         }
@@ -51,59 +52,33 @@
 
 <body>
 
-    <div class="row">
-
-
-        <div class="col-sm-1"></div>
-
-        <div id="searchBox" class="col-sm-2">
-            Please enter search terms below (e.g. Over the Rainbow or Judy Garland):<br />
-            <input type="text" id="search-keyword" title="Enter Search Keyword" />
-            <br />
-            <input id="input" type="button" value="Search iTunes" />
-        </div>
-
-        <div class="col-sm-9"></div>
-            
-    </div>
+    <table class="search">
+        <tr></tr>
+        <tr>
+                <td align="center">                   
+             
+                    Please enter key search words below:<br />
+                    <input type="text" id="search-keyword" title="Enter Search Keyword" />
+                    <br />
+                    <input id="input" type="button" value="Search iTunes" />
+                </td>
+   </table>
 
 
 
 
     <div class="container">
-        <!-- <h2>Results</h2> -->
             <div style="overflow-x:auto;">
                 <table class="table">
-                    <!-- <thead>
-                        <tr>
-                            <th>Photo</th>
-                            <th>Song</th>
-                            <th>Artist</th>
-                            <th></th>
-                            <th>Price</th>
-                        </tr>
-                    </thead> -->
-                    <!-- <tbody id="itunes-results"> -->
-                    <tbody id="data-container">
                     
-                    </tbody>
-                          
+                    <tbody id="data-container"></tbody>
                 </table>
                 
-                    <div id="pagination-container"></div>
+                <div id="pagination-container"></div>
 
             </div>
     </div>
 
-
-
-
-
-
-
-  
-
-  
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
     <script src="pagination.js"></script>
     <script src="itunes-search.js"></script>
